@@ -19,8 +19,6 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void robotInit() {
 		oi = new OI();
-		//chooser.addDefault("Default Auto", //<insert name of normal drive here (probably the mecanum drive)>);
-		// chooser.addObject("My Auto", new MyAutoCommand());
 		SmartDashboard.putData("Auto mode", chooser);
 	}
 
