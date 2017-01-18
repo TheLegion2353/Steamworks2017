@@ -1,5 +1,6 @@
 package org.usfirst.frc.team2353.robot.subsystems;
 
+import org.usfirst.frc.team2353.robot.OI;
 import org.usfirst.frc.team2353.robot.RobotMap;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.TalonSRX;
@@ -10,7 +11,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class Chassis extends Subsystem {
 	private TalonSRX frontLeftMotor, rearLeftMotor,frontRightMotor, rearRightMotor;
-	private RobotDrive drive;
+	private static RobotDrive drive;
 
 	public Chassis() {
 		frontLeftMotor = new TalonSRX(RobotMap.frontLeftMotor);
@@ -24,8 +25,8 @@ public class Chassis extends Subsystem {
     	//setDefaultCommand(new );
     }
     
-    public void mecanumDrive_Polar(double magnitude, double direction, double rotation) {
-    	drive.mecanumDrive_Polar(magnitude, direction, 1);
+    public static void mecanumDrive_Polar() {
+    	drive.mecanumDrive_Polar(OI.getXboxRightXAxis(), OI.getTriggerValue(), OI.getXboxRightYAxis());
     }
 
 }
