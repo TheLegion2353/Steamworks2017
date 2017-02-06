@@ -11,6 +11,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Robot extends IterativeRobot {
+	public static Chassis chassis;
 	public static OI oi;
 
 	Command autonomousCommand;
@@ -19,6 +20,7 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void robotInit() {
 		oi = new OI();
+		chassis = new Chassis();
 		SmartDashboard.putData("Auto mode", chooser);
 	}
 
