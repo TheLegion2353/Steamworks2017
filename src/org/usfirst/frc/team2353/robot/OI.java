@@ -25,8 +25,8 @@ public class OI {
 	// Xbox axis numbers
 	private final static int leftYAxis = 1;
 	private final static int leftXAxis = 0;
-	private final static int rightYAxis = 3;
-	private final static int rightXAxis = 2;
+	private final static int rightYAxis = 5;
+	private final static int rightXAxis = 4;
 
 	private final static int left_Trigger = 2;
 	private final static int right_Trigger = 3;
