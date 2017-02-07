@@ -43,8 +43,8 @@ public class OI {
 
 	}
 
-	public static double getXboxRightXAxis() {
-		double x_axis = xboxController.getRawAxis(rightXAxis);
+	public static double getXboxLeftXAxis() {
+		double x_axis = xboxController.getRawAxis(leftXAxis);
 
 		if (x_axis > -.2 && x_axis < .2)
 			x_axis = 0;
@@ -52,8 +52,8 @@ public class OI {
 		return x_axis;
 	}
 	
-	public static double getXboxRightYAxis() {
-		double y_axis = xboxController.getRawAxis(rightYAxis);
+	public static double getXboxLeftYAxis() {
+		double y_axis = xboxController.getRawAxis(leftYAxis);
 
 		if (y_axis > -.2 && y_axis < .2)
 			y_axis = 0;
