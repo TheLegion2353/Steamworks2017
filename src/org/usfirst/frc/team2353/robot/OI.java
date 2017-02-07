@@ -60,6 +60,15 @@ public class OI {
 
 		return y_axis;
 	}
+	
+	public static double getXboxRightYAxis() {
+		double y_axis = xboxController.getRawAxis(rightYAxis);
+
+		if (y_axis > -.2 && y_axis < .2)
+			y_axis = 0;
+
+		return y_axis;
+	}
 
 	public static double getTriggerValue() {
 		double leftTriggerSpeed = xboxController.getRawAxis(2);
