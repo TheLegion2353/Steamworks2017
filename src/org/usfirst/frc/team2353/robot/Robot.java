@@ -74,12 +74,12 @@ public class Robot extends IterativeRobot {
 		if (autonomousCommand != null) {
 			autonomousCommand.cancel();
 		}
-		Chassis.mecanumDrive_Polar();
 	}
 
 	@Override
 	public void teleopPeriodic() {
 		Scheduler.getInstance().run();
+		//Robot.chassis.mecanumDrive_Polar();
 	}
 
 	@Override

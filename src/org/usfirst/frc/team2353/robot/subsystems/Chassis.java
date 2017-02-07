@@ -1,5 +1,6 @@
 package org.usfirst.frc.team2353.robot.subsystems;
 
+import org.usfirst.frc.team2353.commands.MecanumDrive;
 import org.usfirst.frc.team2353.robot.OI;
 import org.usfirst.frc.team2353.robot.RobotMap;
 import edu.wpi.first.wpilibj.RobotDrive;
@@ -22,10 +23,10 @@ public class Chassis extends Subsystem {
 	}
 
     public void initDefaultCommand() {
-    	//setDefaultCommand(new );
+    	setDefaultCommand(new MecanumDrive());
     }
     
-    public static void mecanumDrive_Polar() {
+    public void mecanumDrive_Polar() {
     	drive.mecanumDrive_Polar(OI.getXboxRightXAxis(), OI.getTriggerValue(), OI.getXboxRightYAxis());
     }
 
