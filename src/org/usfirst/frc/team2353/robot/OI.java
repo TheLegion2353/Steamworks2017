@@ -71,12 +71,12 @@ public class OI {
 	}
 
 	public static double getTriggerValue() {
-		double leftTriggerSpeed = xboxController.getRawAxis(2);
+		double leftTriggerSpeed = xboxController.getRawAxis(left_Trigger);
 		if (leftTriggerSpeed < .1) {
 			leftTriggerSpeed = 0;
 		}
 
-		double rightTriggerSpeed = xboxController.getRawAxis(3);
+		double rightTriggerSpeed = xboxController.getRawAxis(right_Trigger);
 		if (rightTriggerSpeed < .1) {
 			rightTriggerSpeed = 0;
 		}
