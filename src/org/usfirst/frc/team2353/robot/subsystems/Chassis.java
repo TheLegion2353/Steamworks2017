@@ -26,8 +26,8 @@ public class Chassis extends Subsystem {
     	setDefaultCommand(new MecanumDrive());
     }
     
-    public void mecanumDrive_Polar() {
-    	drive.mecanumDrive_Polar(OI.getXboxRightXAxis(), OI.getXboxLeftXAxis(), OI.getXboxLeftYAxis());
+    public void mecanumDrive_Cartesian() {
+    	drive.mecanumDrive_Cartesian(OI.getXboxRightXAxis(), OI.getXboxLeftXAxis(), OI.getXboxLeftYAxis(), 0);
     }
 
 }
