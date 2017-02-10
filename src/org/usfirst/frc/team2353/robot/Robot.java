@@ -79,7 +79,6 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void teleopPeriodic() {
 		Scheduler.getInstance().run();
-		//Robot.chassis.mecanumDrive_Polar();
 	}
 
 	@Override
