@@ -85,4 +85,19 @@ public class OI {
 
 		return triggerSpeed;
 	}
+	
+	public static double getBumper() {
+		boolean leftBumper = xboxController.getRawButton(left_Bumper);
+		boolean rightBumper = xboxController.getRawButton(right_Bumper);
+		
+		if(leftBumper == true && rightBumper == false) {
+			return 40;
+		}
+		else if(leftBumper == false && rightBumper == true) {
+			return -40;
+		}
+		else {
+			return 0;
+		}
+	}
 }

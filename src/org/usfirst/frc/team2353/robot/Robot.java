@@ -2,6 +2,7 @@
 package org.usfirst.frc.team2353.robot;
 
 import org.usfirst.frc.team2353.robot.subsystems.Chassis;
+import org.usfirst.frc.team2353.robot.subsystems.Tray;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
@@ -12,6 +13,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Robot extends IterativeRobot {
 	public static Chassis chassis;
+	public static Tray tray;
 	public static OI oi;
 
 	Command autonomousCommand;
@@ -21,6 +23,7 @@ public class Robot extends IterativeRobot {
 	public void robotInit() {
 		oi = new OI();
 		chassis = new Chassis();
+		tray = new Tray();
 		SmartDashboard.putData("Auto mode", chooser);
 	}
 
