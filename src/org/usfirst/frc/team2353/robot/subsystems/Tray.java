@@ -22,8 +22,8 @@ public class Tray extends Subsystem {
         setDefaultCommand(new TrayMove());
     }
     
-    public void moveTray() {
-    	trayMotor.set(OI.getBumper());
+    public void moveTray(double speed) {
+    	trayMotor.set(speed);
     }
 }
 

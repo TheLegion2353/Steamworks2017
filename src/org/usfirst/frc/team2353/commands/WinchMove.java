@@ -1,5 +1,6 @@
 package org.usfirst.frc.team2353.commands;
 
+import org.usfirst.frc.team2353.robot.OI;
 import org.usfirst.frc.team2353.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
@@ -19,7 +20,7 @@ public class WinchMove extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.winch.moveWinch();
+    	Robot.winch.moveWinch(OI.getBumper());
     }
 
     // Make this return true when this Command no longer needs to run execute()
