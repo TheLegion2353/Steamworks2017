@@ -11,6 +11,6 @@ public class RobotMap {
 	public final static int xboxPort = 1; 
 		
 	//Motors
-	public final static int frontLeftMotor = 0, rearLeftMotor = 1,frontRightMotor = 2, rearRightMotor = 3;
-	public final static int elevator = 4;
+	public final static int frontLeftMotor = 0, rearLeftMotor = 1, frontRightMotor = 2, rearRightMotor = 3;
+	public final static int tray = 4, gear = 5;
 }
