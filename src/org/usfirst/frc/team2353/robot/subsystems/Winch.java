@@ -13,8 +13,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 public class Winch extends Subsystem {
 
 	private TalonSRX winchRight, winchLeft;
-    // Put methods for controlling this subsystem
-    // here. Call these from Commands.
+
 	public Winch(){
 		winchRight = new TalonSRX(RobotMap.winchRight);
 		winchLeft = new TalonSRX(RobotMap.winchLeft);
@@ -22,12 +21,10 @@ public class Winch extends Subsystem {
 
     public void initDefaultCommand() {
     	setDefaultCommand(new WinchMove());
-        // Set the default command for a subsystem here.
-        //setDefaultCommand(new MySpecialCommand());
     }
     public void moveWinch(){
     	winchLeft.set(OI.getTriggerValue());
-    	winchRight.set(OI.getTriggerValue());
+    	winchRight.set(-OI.getTriggerValue());
     }
 }
 
