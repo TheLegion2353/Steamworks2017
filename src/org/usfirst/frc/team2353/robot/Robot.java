@@ -31,7 +31,7 @@ public class Robot extends IterativeRobot {
 		modeChooser = new SendableChooser();
 		
 		modeChooser.addDefault("Move Forward", "forward");
-		modeChooser.addDefault("Do Nothing", "nothing");
+		modeChooser.addObject("Do Nothing", "nothing");
 		modeChooser.addObject("Gear", "gear");
 		SmartDashboard.putData("Auto mode", modeChooser);
 	}
@@ -59,8 +59,6 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void autonomousInit() {
-		autonomousCommand = (Command) modeChooser.getSelected();
-		
 		String mode = (String) modeChooser.getSelected();
 
 		if(mode == "forward") {
