@@ -1,6 +1,8 @@
 
 package org.usfirst.frc.team2353.robot;
 
+import org.usfirst.frc.team2353.commands.DoNothing;
+import org.usfirst.frc.team2353.commands.TimedDrive;
 import org.usfirst.frc.team2353.robot.subsystems.Chassis;
 import org.usfirst.frc.team2353.robot.subsystems.Tray;
 import org.usfirst.frc.team2353.robot.subsystems.Winch;
@@ -30,9 +32,9 @@ public class Robot extends IterativeRobot {
 		
 		modeChooser = new SendableChooser();
 		
-		modeChooser.addDefault("Move Forward", "forward");
-		modeChooser.addObject("Do Nothing", "nothing");
-		modeChooser.addObject("Gear", "gear");
+		modeChooser.addDefault("Move Forward", new TimedDrive(30, 0, 0, 0, 3));
+		modeChooser.addObject("Do Nothing", new DoNothing());
+		//modeChooser.addObject("Gear", "gear");
 		SmartDashboard.putData("Auto mode", modeChooser);
 	}
 
@@ -59,17 +61,7 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void autonomousInit() {
-		String mode = (String) modeChooser.getSelected();
-
-		if(mode == "forward") {
-			SmartDashboard.putString("", "Test Forward");
-		}
-		else if(mode == "gear") {
-			SmartDashboard.putString("", "Test Gear");
-		}
-		else {
-			SmartDashboard.putString("", "Test Nothing");
-		}
+		autonomousCommand = (Command) modeChooser.getSelected();
 
 		// schedule the autonomous command (example)
 		if (autonomousCommand != null)
