@@ -19,7 +19,7 @@ public class Robot extends IterativeRobot {
 	public static OI oi;
 
 	Command autonomousCommand;
-	SendableChooser<Command> chooser = new SendableChooser<>();
+	SendableChooser modeChooser;
 
 	@Override
 	public void robotInit() {
@@ -27,7 +27,13 @@ public class Robot extends IterativeRobot {
 		chassis = new Chassis();
 		winch = new Winch();
 		tray = new Tray();
-		SmartDashboard.putData("Auto mode", chooser);
+		
+		modeChooser = new SendableChooser();
+		
+		modeChooser.addDefault("Move Forward", "forward");
+		modeChooser.addDefault("Do Nothing", "nothing");
+		modeChooser.addObject("Gear", "gear");
+		SmartDashboard.putData("Auto mode", modeChooser);
 	}
 
 	@Override
@@ -53,14 +59,19 @@ public class Robot extends IterativeRobot {
 	 */
 	@Override
 	public void autonomousInit() {
-		autonomousCommand = chooser.getSelected();
+		autonomousCommand = (Command) modeChooser.getSelected();
+		
+		String mode = (String) modeChooser.getSelected();
 
-		/*
-		 * String autoSelected = SmartDashboard.getString("Auto Selector",
-		 * "Default"); switch(autoSelected) { case "My Auto": autonomousCommand
-		 * = new MyAutoCommand(); break; case "Default Auto": default:
-		 * autonomousCommand = new ExampleCommand(); break; }
-		 */
+		if(mode == "forward") {
+			SmartDashboard.putString("", "Test Forward");
+		}
+		else if(mode == "gear") {
+			SmartDashboard.putString("", "Test Gear");
+		}
+		else {
+			SmartDashboard.putString("", "Test Nothing");
+		}
 
 		// schedule the autonomous command (example)
 		if (autonomousCommand != null)
