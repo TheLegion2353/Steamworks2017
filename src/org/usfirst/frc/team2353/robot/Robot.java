@@ -38,7 +38,7 @@ public class Robot extends IterativeRobot {
 		
 		modeChooser = new SendableChooser();
 		
-		modeChooser.addDefault("Move Forward", new TimedDrive(0, 0, 30, 0, 3));
+		modeChooser.addDefault("Move Forward", new TimedDrive(0, 30, 0, 0, 2));
 		modeChooser.addObject("Do Nothing", new DoNothing());
 		//modeChooser.addObject("Gear", "gear");
 		SmartDashboard.putData("Auto mode", modeChooser);
