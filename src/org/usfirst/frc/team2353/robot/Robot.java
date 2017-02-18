@@ -33,9 +33,8 @@ public class Robot extends IterativeRobot {
 		winch = new Winch();
 		tray = new Tray();
 		
-		CameraServer server = CameraServer.getInstance();
-//		server.setQuality(50);
-//		server.startAutomaticCapture("cam0");
+		//CameraServer server = CameraServer.getInstance();
+		//server.startAutomaticCapture();
 		
 		modeChooser = new SendableChooser();
 		
