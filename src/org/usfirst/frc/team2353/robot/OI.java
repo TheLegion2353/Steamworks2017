@@ -49,7 +49,7 @@ public class OI {
 		if (x_axis > -.2 && x_axis < .2)
 			x_axis = 0;
 
-		return -x_axis;
+		return x_axis;
 	}
 	
 	public static double getXboxLeftYAxis() {
@@ -58,7 +58,7 @@ public class OI {
 		if (y_axis > -.2 && y_axis < .2)
 			y_axis = 0;
 
-		return -y_axis;
+		return y_axis;
 	}
 	
 	public static double getXboxRightXAxis() {

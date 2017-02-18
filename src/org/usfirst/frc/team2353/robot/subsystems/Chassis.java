@@ -5,7 +5,11 @@ import org.usfirst.frc.team2353.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.Victor;
+import edu.wpi.first.wpilibj.RobotDrive.MotorType;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.hal.HAL;
+import edu.wpi.first.wpilibj.hal.FRCNetComm.tInstances;
+import edu.wpi.first.wpilibj.hal.FRCNetComm.tResourceType;
 
 /**
  *
@@ -27,8 +31,10 @@ public class Chassis extends Subsystem {
     }
     
     public void mecanumDrive_Cartesian(double x, double y, double rotation, double gyro) {
-    	drive.mecanumDrive_Cartesian(x, y, rotation, gyro);
+        frontLeftMotor.set(x + y + rotation);
+        frontRightMotor.set(-x + y - rotation);
+        rearLeftMotor.set(-x + y + rotation);
+        rearRightMotor.set(x + y - rotation);
     }
-
 }
 
