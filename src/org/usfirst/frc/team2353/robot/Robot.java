@@ -4,9 +4,11 @@ package org.usfirst.frc.team2353.robot;
 import org.usfirst.frc.team2353.commands.DoNothing;
 import org.usfirst.frc.team2353.commands.TimedDrive;
 import org.usfirst.frc.team2353.robot.subsystems.Chassis;
+import org.usfirst.frc.team2353.robot.subsystems.Roller;
 import org.usfirst.frc.team2353.robot.subsystems.Tray;
 import org.usfirst.frc.team2353.robot.subsystems.Winch;
 
+import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -17,6 +19,7 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Robot extends IterativeRobot {
 	public static Chassis chassis;
 	public static Winch winch;
+	public static Roller roller;
 	public static Tray tray;
 	public static OI oi;
 
@@ -30,9 +33,13 @@ public class Robot extends IterativeRobot {
 		winch = new Winch();
 		tray = new Tray();
 		
+		CameraServer server = CameraServer.getInstance();
+//		server.setQuality(50);
+//		server.startAutomaticCapture("cam0");
+		
 		modeChooser = new SendableChooser();
 		
-		modeChooser.addDefault("Move Forward", new TimedDrive(30, 0, 0, 0, 3));
+		modeChooser.addDefault("Move Forward", new TimedDrive(0, 0, 30, 0, 3));
 		modeChooser.addObject("Do Nothing", new DoNothing());
 		//modeChooser.addObject("Gear", "gear");
 		SmartDashboard.putData("Auto mode", modeChooser);

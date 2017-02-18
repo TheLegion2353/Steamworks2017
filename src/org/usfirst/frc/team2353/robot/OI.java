@@ -10,28 +10,28 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
  */
 public class OI {
 
-	private static Joystick xboxController;
+	public static Joystick xboxController;
 
 	// Xbox Button mappings
-	private final static int AButtonNum = 0;
-	private final static int BButtonNum = 1;
-	private final static int YButtonNum = 3;
-	private final static int XButtonNum = 2;
-	private final static int left_Bumper = 4;
-	private final static int right_Bumper = 5;
-	private final static int select_Button = 6;
-	private final static int start_Button = 7;
+	public final static int AButtonNum = 1;
+	public final static int BButtonNum = 2;
+	public final static int YButtonNum = 4;
+	public final static int XButtonNum = 3;
+	public final static int left_Bumper = 6;
+	public final static int right_Bumper = 5;
+	public final static int select_Button = 6;
+	public final static int start_Button = 7;
 
 	// Xbox axis numbers
-	private final static int leftYAxis = 1;
-	private final static int leftXAxis = 0;
-	private final static int rightYAxis = 5;
-	private final static int rightXAxis = 4;
+	public final static int leftYAxis = 1;
+	public final static int leftXAxis = 0;
+	public final static int rightYAxis = 5;
+	public final static int rightXAxis = 4;
 
-	private final static int left_Trigger = 2;
-	private final static int right_Trigger = 3;
+	public final static int left_Trigger = 2;
+	public final static int right_Trigger = 3;
 
-	private JoystickButton AButton, BButton, YButton, XButton;
+	public JoystickButton AButton, BButton, YButton, XButton;
 
 	public OI() {
 		xboxController = new Joystick(RobotMap.xboxPort);
@@ -49,7 +49,7 @@ public class OI {
 		if (x_axis > -.2 && x_axis < .2)
 			x_axis = 0;
 
-		return x_axis;
+		return -x_axis;
 	}
 	
 	public static double getXboxLeftYAxis() {
@@ -58,16 +58,16 @@ public class OI {
 		if (y_axis > -.2 && y_axis < .2)
 			y_axis = 0;
 
-		return y_axis;
+		return -y_axis;
 	}
 	
 	public static double getXboxRightXAxis() {
-		double y_axis = xboxController.getRawAxis(rightXAxis);
+		double x_axis = xboxController.getRawAxis(rightXAxis);
 
-		if (y_axis > -.2 && y_axis < .2)
-			y_axis = 0;
+		if (x_axis > -.2 && x_axis < .2)
+			x_axis = 0;
 
-		return y_axis;
+		return -x_axis;
 	}
 
 	public static double getTriggerValue() {
@@ -91,10 +91,10 @@ public class OI {
 		boolean rightBumper = xboxController.getRawButton(right_Bumper);
 		
 		if(leftBumper == true && rightBumper == false) {
-			return 40;
+			return 5;
 		}
 		else if(leftBumper == false && rightBumper == true) {
-			return -40;
+			return -5;
 		}
 		else {
 			return 0;

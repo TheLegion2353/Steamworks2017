@@ -8,10 +8,13 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class WinchMove extends Command {
+public class RollerMove extends Command {
+	
+	private double speed;
 
-    public WinchMove() {
-    	requires(Robot.winch);
+    public RollerMove() {
+    	speed = 0;
+    	requires(Robot.roller);
     }
 
     // Called just before this Command runs the first time
@@ -20,7 +23,16 @@ public class WinchMove extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.winch.moveWinch(OI.getTriggerValue());
+    	if(OI.xboxController.getRawButton(OI.AButtonNum) == true && OI.xboxController.getRawButton(OI.YButtonNum) == false) {
+			speed = 20;
+		}
+		else if(OI.xboxController.getRawButton(OI.AButtonNum) == false && OI.xboxController.getRawButton(OI.YButtonNum) == true) {
+			speed = -20;
+		}
+		else {
+			speed = 0;
+		}
+    	Robot.roller.moveRoller(speed);
     }
 
     // Make this return true when this Command no longer needs to run execute()

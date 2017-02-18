@@ -22,6 +22,7 @@ public class Winch extends Subsystem {
     public void initDefaultCommand() {
     	setDefaultCommand(new WinchMove());
     }
+    
     public void moveWinch(double speed){
     	winchLeft.set(speed);
     	winchRight.set(-speed);
