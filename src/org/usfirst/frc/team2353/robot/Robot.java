@@ -8,6 +8,7 @@ import org.usfirst.frc.team2353.robot.subsystems.Roller;
 import org.usfirst.frc.team2353.robot.subsystems.Tray;
 import org.usfirst.frc.team2353.robot.subsystems.Winch;
 
+import edu.wpi.cscore.UsbCamera;
 import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;

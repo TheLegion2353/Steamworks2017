@@ -17,8 +17,8 @@ public class OI {
 	public final static int BButtonNum = 2;
 	public final static int YButtonNum = 4;
 	public final static int XButtonNum = 3;
-	public final static int left_Bumper = 6;
-	public final static int right_Bumper = 5;
+	public final static int left_Bumper = 5;
+	public final static int right_Bumper = 6;
 	public final static int select_Button = 6;
 	public final static int start_Button = 7;
 
@@ -84,20 +84,5 @@ public class OI {
 		double triggerSpeed = rightTriggerSpeed - leftTriggerSpeed;
 
 		return triggerSpeed;
-	}
-	
-	public static double getBumper() {
-		boolean leftBumper = xboxController.getRawButton(left_Bumper);
-		boolean rightBumper = xboxController.getRawButton(right_Bumper);
-		
-		if(leftBumper == true && rightBumper == false) {
-			return 0.4;
-		}
-		else if(leftBumper == false && rightBumper == true) {
-			return -0.4;
-		}
-		else {
-			return 0;
-		}
 	}
 }

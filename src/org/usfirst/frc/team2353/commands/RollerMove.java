@@ -23,7 +23,7 @@ public class RollerMove extends Command {
 
     // Called repeatedly when this Command is scheduled to run  && OI.xboxController.getRawButton(OI.YButtonNum) == false
     protected void execute() {
-    	if(OI.xboxController.getRawButton(OI.YButtonNum) == true) {
+    	if(OI.xboxController.getRawButton(OI.left_Bumper) == true) {
 			speed = -0.3;
 		}
     	else {

@@ -9,7 +9,9 @@ import edu.wpi.first.wpilibj.command.Command;
  *
  */
 public class TrayMove extends Command {
-
+	
+	private double speed;
+	
     public TrayMove() {
         requires(Robot.tray);
     }
@@ -20,7 +22,13 @@ public class TrayMove extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.tray.moveTray(OI.getBumper());
+    	if(OI.xboxController.getRawButton(OI.right_Bumper) ==  true) {
+			speed = 0.43;
+		}
+    	else {
+			speed = 0;
+		}
+    	Robot.tray.moveTray(speed);
     }
 
     // Make this return true when this Command no longer needs to run execute()
