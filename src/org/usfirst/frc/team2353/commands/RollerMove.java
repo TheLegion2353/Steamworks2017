@@ -17,19 +17,16 @@ public class RollerMove extends Command {
     	requires(Robot.roller);
     }
 
-    // Called just before this Command runs the first time
+    // Called just before this Command runs the first time  && OI.xboxController.getRawButton(OI.YButtonNum) == true
     protected void initialize() {
     }
 
-    // Called repeatedly when this Command is scheduled to run
+    // Called repeatedly when this Command is scheduled to run  && OI.xboxController.getRawButton(OI.YButtonNum) == false
     protected void execute() {
-    	if(OI.xboxController.getRawButton(OI.AButtonNum) == true && OI.xboxController.getRawButton(OI.YButtonNum) == false) {
-			speed = 20;
+    	if(OI.xboxController.getRawButton(OI.YButtonNum) == true) {
+			speed = -0.3;
 		}
-		else if(OI.xboxController.getRawButton(OI.AButtonNum) == false && OI.xboxController.getRawButton(OI.YButtonNum) == true) {
-			speed = -20;
-		}
-		else {
+    	else {
 			speed = 0;
 		}
     	Robot.roller.moveRoller(speed);

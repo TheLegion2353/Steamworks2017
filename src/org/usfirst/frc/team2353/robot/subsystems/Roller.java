@@ -1,5 +1,6 @@
 package org.usfirst.frc.team2353.robot.subsystems;
 
+import org.usfirst.frc.team2353.commands.RollerMove;
 import org.usfirst.frc.team2353.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.TalonSRX;
@@ -17,8 +18,7 @@ public class Roller extends Subsystem {
     }
 
     public void initDefaultCommand() {
-        // Set the default command for a subsystem here.
-        //setDefaultCommand(new MySpecialCommand());
+        setDefaultCommand(new RollerMove());
     }
     
     public void moveRoller(double speed) {

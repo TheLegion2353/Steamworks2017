@@ -58,7 +58,7 @@ public class OI {
 		if (y_axis > -.2 && y_axis < .2)
 			y_axis = 0;
 
-		return y_axis;
+		return -y_axis;
 	}
 	
 	public static double getXboxRightXAxis() {
@@ -67,7 +67,7 @@ public class OI {
 		if (x_axis > -.2 && x_axis < .2)
 			x_axis = 0;
 
-		return x_axis;
+		return -x_axis;
 	}
 
 	public static double getTriggerValue() {
@@ -91,10 +91,10 @@ public class OI {
 		boolean rightBumper = xboxController.getRawButton(right_Bumper);
 		
 		if(leftBumper == true && rightBumper == false) {
-			return 20;
+			return 0.4;
 		}
 		else if(leftBumper == false && rightBumper == true) {
-			return -20;
+			return -0.4;
 		}
 		else {
 			return 0;

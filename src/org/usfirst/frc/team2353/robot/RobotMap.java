@@ -8,11 +8,11 @@ package org.usfirst.frc.team2353.robot;
  */
 public class RobotMap {
 	//USB Ports
-	public final static int xboxPort = 1; 
+	public final static int xboxPort = 0; 
 		
 	//Motors
 	public final static int frontLeftMotor = 4, rearLeftMotor = 6, frontRightMotor = 5, rearRightMotor = 7;
-	public final static int tray = 0, gear = 6, winchRight = 8, winchLeft = 2, roller = 1;
+	public final static int tray = 0, gear = 6, winchRight = 8, winchLeft = 2, roller = 3;
 	
 	//Black: Roller
 	//Red: Winch Left

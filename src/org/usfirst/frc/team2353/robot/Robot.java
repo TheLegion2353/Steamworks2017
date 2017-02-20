@@ -29,16 +29,16 @@ public class Robot extends IterativeRobot {
 	@Override
 	public void robotInit() {
 		oi = new OI();
+		roller = new Roller();
 		chassis = new Chassis();
 		winch = new Winch();
 		tray = new Tray();
 		
-		//CameraServer server = CameraServer.getInstance();
-		//server.startAutomaticCapture();
+		CameraServer.getInstance().startAutomaticCapture();
 		
 		modeChooser = new SendableChooser();
 		
-		modeChooser.addDefault("Move Forward", new TimedDrive(0, 30, 0, 0, 2));
+		modeChooser.addDefault("Move Forward", new TimedDrive(0, 5, 0, 0, 1));
 		modeChooser.addObject("Do Nothing", new DoNothing());
 		//modeChooser.addObject("Gear", "gear");
 		SmartDashboard.putData("Auto mode", modeChooser);
