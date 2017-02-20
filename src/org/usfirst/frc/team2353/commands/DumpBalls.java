@@ -1,6 +1,5 @@
 package org.usfirst.frc.team2353.commands;
 
-import org.usfirst.frc.team2353.robot.OI;
 import org.usfirst.frc.team2353.robot.Robot;
 
 import edu.wpi.first.wpilibj.command.Command;
@@ -8,12 +7,12 @@ import edu.wpi.first.wpilibj.command.Command;
 /**
  *
  */
-public class TrayMove extends Command {
-	
-	private double speed;
-	
-    public TrayMove() {
-        requires(Robot.tray);
+public class DumpBalls extends Command {
+
+    public DumpBalls(double time) {
+    	requires(Robot.tray);
+    	
+    	setTimeout(time);
     }
 
     // Called just before this Command runs the first time
@@ -22,13 +21,7 @@ public class TrayMove extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	if(OI.xboxController.getRawButton(OI.right_Bumper) ==  true) {
-			speed = 0.7;
-		}
-    	else {
-			speed = 0;
-		}
-    	Robot.tray.moveTray(speed);
+    	Robot.tray.moveTray(0.7);
     }
 
     // Make this return true when this Command no longer needs to run execute()

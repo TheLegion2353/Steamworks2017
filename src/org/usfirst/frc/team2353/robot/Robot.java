@@ -1,7 +1,11 @@
 
 package org.usfirst.frc.team2353.robot;
 
+import org.usfirst.frc.team2353.commands.BallLeft;
+import org.usfirst.frc.team2353.commands.BallRight;
 import org.usfirst.frc.team2353.commands.DoNothing;
+import org.usfirst.frc.team2353.commands.GearLeft;
+import org.usfirst.frc.team2353.commands.GearRight;
 import org.usfirst.frc.team2353.commands.TimedDrive;
 import org.usfirst.frc.team2353.robot.subsystems.Chassis;
 import org.usfirst.frc.team2353.robot.subsystems.Roller;
@@ -39,8 +43,13 @@ public class Robot extends IterativeRobot {
 		
 		modeChooser = new SendableChooser();
 		
-		modeChooser.addDefault("Move Forward", new TimedDrive(0, 5, 0, 0, 1));
+		modeChooser.addDefault("Move Forward", new TimedDrive(0, 0.6, 0, 0, 1));
+		modeChooser.addObject("Gear Right", new GearRight());
+		modeChooser.addObject("Gear Left", new GearLeft());
+		modeChooser.addObject("Ball Right", new BallRight());
+		modeChooser.addObject("Ball Left", new BallLeft());
 		modeChooser.addObject("Do Nothing", new DoNothing());
+		
 		//modeChooser.addObject("Gear", "gear");
 		SmartDashboard.putData("Auto mode", modeChooser);
 	}
