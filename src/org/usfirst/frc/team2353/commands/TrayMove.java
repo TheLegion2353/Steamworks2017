@@ -23,7 +23,7 @@ public class TrayMove extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	if(OI.xboxController.getRawButton(OI.right_Bumper) ==  true) {
-			speed = 0.7;
+			speed = 0.5;
 		}
     	else {
 			speed = 0;
