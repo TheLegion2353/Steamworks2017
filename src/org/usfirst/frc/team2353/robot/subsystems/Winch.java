@@ -25,7 +25,7 @@ public class Winch extends Subsystem {
     
     public void moveWinch(double speed){
     	winchLeft.set(speed);
-    	winchRight.set(-speed);
+    	winchRight.set(speed);
     }
 }
 
