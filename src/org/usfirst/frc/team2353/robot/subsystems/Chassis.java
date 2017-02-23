@@ -4,6 +4,7 @@ import org.usfirst.frc.team2353.commands.MecanumDrive;
 import org.usfirst.frc.team2353.robot.OI;
 import org.usfirst.frc.team2353.robot.RobotMap;
 import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.RobotDrive.MotorType;
 import edu.wpi.first.wpilibj.TalonSRX;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
@@ -20,14 +21,17 @@ public class Chassis extends Subsystem {
 		frontRightMotor = new TalonSRX(RobotMap.frontRightMotor);
 		rearRightMotor = new TalonSRX(RobotMap.rearRightMotor);
     	drive = new RobotDrive(frontLeftMotor, rearLeftMotor,frontRightMotor, rearRightMotor);
+    	
+    	drive.setInvertedMotor(MotorType.kFrontLeft, true);
+    	drive.setInvertedMotor(MotorType.kRearLeft, true);
 	}
 
     public void initDefaultCommand() {
     	setDefaultCommand(new MecanumDrive());
     }
     
-    public void mecanumDrive_Cartesian() {
-    	drive.mecanumDrive_Cartesian(OI.getXboxRightXAxis(), OI.getXboxLeftXAxis(), OI.getXboxLeftYAxis(), 0);
+    public void mecanumDrive_Cartesian(double x, double y, double rotation, double gyro) {
+    	drive.mecanumDrive_Cartesian(x, y, rotation, gyro);
     }
 
 }
