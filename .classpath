@@ -14,5 +14,18 @@
 	<classpathentry kind="lib" path="/home/shirom/wpilib/java/current/lib/opencv-sources.jar"/>
 	<classpathentry kind="lib" path="/home/shirom/wpilib/java/current/lib/WPILib.jar"/>
 	<classpathentry kind="lib" path="/home/shirom/wpilib/java/current/lib/WPILib-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Robotics/wpilib/java/current/lib/cscore.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Robotics/wpilib/java/current/lib/cscore-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Robotics/wpilib/java/current/lib/ntcore.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Robotics/wpilib/java/current/lib/ntcore-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Robotics/wpilib/java/current/lib/opencv.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Robotics/wpilib/java/current/lib/opencv-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Robotics/wpilib/java/current/lib/WPILib.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Robotics/wpilib/java/current/lib/WPILib-sources.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Robotics/wpilib/java/current/lib/wpiutil.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Robotics/wpilib/java/current/lib/wpiutil-sources.jar"/>
+	<classpathentry kind="var" path="wpiutil" sourcepath="wpiutil.sources"/>
+	<classpathentry kind="var" path="USERLIBS_DIR/CTRE_Phoenix-sources.jar"/>
+	<classpathentry kind="var" path="USERLIBS_DIR/CTRE_Phoenix.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -3,7 +3,8 @@ package org.usfirst.frc.team2353.robot.subsystems;
 import org.usfirst.frc.team2353.commands.RollerMove;
 import org.usfirst.frc.team2353.robot.RobotMap;
 
-import edu.wpi.first.wpilibj.TalonSRX;
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -11,10 +12,10 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class Roller extends Subsystem {
 
-    private TalonSRX roller;
+    private WPI_TalonSRX roller;
     
     public Roller() {
-    	roller = new TalonSRX(RobotMap.roller);
+    	roller = new WPI_TalonSRX(RobotMap.roller);
     }
 
     public void initDefaultCommand() {

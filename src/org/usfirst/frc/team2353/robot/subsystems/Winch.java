@@ -1,10 +1,10 @@
 package org.usfirst.frc.team2353.robot.subsystems;
 
 import org.usfirst.frc.team2353.commands.WinchMove;
-import org.usfirst.frc.team2353.robot.OI;
 import org.usfirst.frc.team2353.robot.RobotMap;
 
-import edu.wpi.first.wpilibj.TalonSRX;
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -12,11 +12,11 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class Winch extends Subsystem {
 
-	private TalonSRX winchRight, winchLeft;
+	private WPI_TalonSRX winchRight, winchLeft;
 
 	public Winch(){
-		winchRight = new TalonSRX(RobotMap.winchRight);
-		winchLeft = new TalonSRX(RobotMap.winchLeft);
+		winchRight = new WPI_TalonSRX(RobotMap.winchRight);
+		winchLeft = new WPI_TalonSRX(RobotMap.winchLeft);
 	}
 
     public void initDefaultCommand() {
